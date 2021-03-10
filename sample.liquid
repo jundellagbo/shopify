@@ -1,0 +1,27 @@
+<!-- 
+for image-metafields-src 
+size: default | master
+-->
+{% include 'image-metafields-src', src: 'image_metafields_url_here', size: '400x' %}
+<!-- 
+return the url of the image
+end image-metafields-src -->
+
+
+<!-- 
+for image-metafields 
+size: default | master
+return the image html including srcsets
+-->
+{% include 'image-metafields', src: 'image_metafields_url_here', size: '400x' %}
+<!-- end image-metafields-src -->
+
+
+<!-- 
+for star-review
+sizerate: the size of the star icon
+rate: rating
+color: color for the star
+-->
+{% include 'star-review', rate: 4.5, sizerate: 20, color: '#000000' %}
+<!-- end image-metafields-src -->

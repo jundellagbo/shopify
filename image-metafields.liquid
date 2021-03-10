@@ -1,0 +1,17 @@
+{% if imagedata %}
+<img  src="{% include 'image-metafields-src', src: imagedata, size: sizedata | default: 'master' %}"
+{% if altdata %}alt="{{ altdata }}"{% endif %}
+data-src="{% include 'image-metafields-src', src: imagedata, size: sizedata | default: 'master' %}"
+class="lazyload full-width lazyload--fade-in {% if classdata %} {{ classdata }}{% endif %}"
+{% if attrsdata %}{{ attrsdata }}{% endif %}
+srcset="
+{% include 'image-metafields-src', src: imagedata, size: '2048x' %} 2048w,
+{% include 'image-metafields-src', src: imagedata, size: '1600x' %} 1600w,
+{% include 'image-metafields-src', src: imagedata, size: '1200x' %} 1200w,
+{% include 'image-metafields-src', src: imagedata, size: '1000x' %} 1000w,
+{% include 'image-metafields-src', src: imagedata, size: '800x' %} 800w,
+{% include 'image-metafields-src', src: imagedata, size: '600x' %} 600w,
+{% include 'image-metafields-src', src: imagedata, size: '400x' %} 400w
+"
+    />
+{% endif %}

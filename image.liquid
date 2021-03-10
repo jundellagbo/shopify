@@ -1,0 +1,31 @@
+{% if imagedata %}
+<img  src="{{ imagedata | img_url: sizedata | default: 'master' }}"
+alt="{{ imagedata.alt | escape }}"
+data-src="{{ imagedata | img_url: sizedata | default: 'master' }}"
+class="lazyload full-width lazyload--fade-in {% if classdata %} {{ classdata }}{% endif %}"
+{% if attrsdata %}{{ attrsdata }}{% endif %}
+srcset="  {{ imagedata | img_url: '2048x' }} 2048w,
+        {{ imagedata | img_url: '1600x' }} 1600w,
+        {{ imagedata | img_url: '1200x' }} 1200w,
+        {{ imagedata | img_url: '1000x' }} 1000w,
+        {{ imagedata | img_url: '800x' }} 800w,
+        {{ imagedata | img_url: '600x' }} 600w,
+        {{ imagedata | img_url: '400x' }} 400w"
+    />
+{% endif %}
+
+{% if productimagedata %}
+<img  src="{{ productimagedata | product_img_url: sizedata | default: 'master' }}"
+alt="{{ productimagedata.alt | escape }}"
+data-src="{{ productimagedata | product_img_url: sizedata | default: 'master' }}"
+class="lazyload full-width lazyload--fade-in {% if classdata %} {{ classdata }}{% endif %}"
+{% if attrsdata %}{{ attrsdata }}{% endif %}
+srcset="  {{ productimagedata | product_img_url: '2048x' }} 2048w,
+        {{ productimagedata | product_img_url: '1600x' }} 1600w,
+        {{ productimagedata | product_img_url: '1200x' }} 1200w,
+        {{ productimagedata | product_img_url: '1000x' }} 1000w,
+        {{ productimagedata | product_img_url: '800x' }} 800w,
+        {{ productimagedata | product_img_url: '600x' }} 600w,
+        {{ productimagedata | product_img_url: '400x' }} 400w"
+    />
+{% endif %}

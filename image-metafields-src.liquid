@@ -1,0 +1,14 @@
+{% assign image_src = src %}
+{% if src != blank %}
+	{% if size != blank and size != 'master' %}
+		{% assign file_parts = src | downcase | strip | split: '.' %}
+		{% assign version_parts = src | downcase | strip | split: '?v=' %}
+		{% if file_parts.size > 1 %}
+			{% assign ext = file_parts | last %}
+            {% assign appendext = '.' | append: ext %}
+			{% assign version = version_parts | last %}
+			{% assign command_ext = '_' | append: size | append: '.' | append: ext %}
+			{% assign image_src = image_src | replace: appendext, command_ext %}
+		{% endif %}
+	{% endif %}
+{% endif %}{{ image_src }}
