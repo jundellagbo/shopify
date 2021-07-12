@@ -1,0 +1,7 @@
+// get image head for shopify images from metafields
+
+{% assign extractimg = imagedata | split: '/' | last | split: '?' | first %}
+{% assign imghead = images[extractimg] %}
+
+// now you can access them via shopify filters
+<img src="{{ imghead | 'master' }}" />
